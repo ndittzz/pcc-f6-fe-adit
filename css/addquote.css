@@ -1,0 +1,35 @@
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.text a {
+    background-color: #AA60C8;
+    color: black; 
+    transition: background-color 0.2s; 
+}
+.text a:hover {
+    background-color: #D69ADE; 
+    color: black; 
+}
+.card {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+}
+.card .card-header {
+    background-color: #D69ADE;
+}
+.card-body {
+    background-color: #EABDE6;
+}
+.full-height .full {
+    height: 100vh;
+}
+.btn {
+    margin-left: 620px;
+}

@@ -1,0 +1,45 @@
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
+.btn-danger {
+    background-color: red !important;
+    border-color: red !important;
+    color: white !important;
+  }
+  
+
+body {
+    background-color: #ffdfef; /* Set the background color for the entire page */
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.full-height .col-sm-10 {
+    height: 100vh;
+}
+
+.card-body {
+    background-color: #EABDE6;
+}
+
+.text a {
+    background-color: #AA60C8;
+    color: black;
+    transition: background-color 0.2s;
+    margin: 10px;
+}
+
+.text a:hover {
+    background-color: #D69ADE;
+    color: black;
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card .card-header {
+    background-color: #D69ADE;
+}
