@@ -1,5 +1,5 @@
 runtime: nodejs20
-service: app-t6
+service: app-adit
 
 handlers:
   # Route ke halaman utama login
