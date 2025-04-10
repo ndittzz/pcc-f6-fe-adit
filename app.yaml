@@ -1,0 +1,34 @@
+runtime: nodejs20
+service: app-t6
+
+handlers:
+  # Route ke halaman utama login
+  - url: /
+    static_files: index.html
+    upload: index.html
+
+  # Route ke halaman register
+  - url: /register
+    static_files: register.html
+    upload: register.html
+
+  # Route ke halaman dashboard
+  - url: /dashboard
+    static_files: dashboard.html
+    upload: dashboard.html
+
+  # Serve file CSS
+  - url: /css/(.*)
+    static_files: css/\1
+    upload:
+      css/(.*)
+
+      # Serve file src
+  - url: /src/(.*)
+    static_files: src/\1
+    upload: src/(.*)
+
+  # Fallback untuk file statis lainnya
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)
