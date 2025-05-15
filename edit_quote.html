@@ -155,6 +155,8 @@
         }
 
         try {
+          const token = localStorage.getItem("accessToken");
+
           const response = await fetch(`${BASE_URL}/notes/all/${id}`);
           const quote = await response.json();
 
@@ -184,7 +186,7 @@
         };
 
         try {
-          fetch(`${BASE_URL}/notes/update-notes/${id}`, {
+          const response = await fetch(`${BASE_URL}/notes/update-notes/${id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -192,13 +194,12 @@
             },
             body: JSON.stringify(updatedData),
           });
-          // Redirect ke home.html setelah edit
-          window.location.href = "home.html";
 
           const result = await response.json();
+
           if (response.ok) {
             alert("Notes berhasil diperbarui!");
-            window.location.href = "home.html"; // Redirect ke halaman utama
+            window.location.href = "home.html"; // Redirect setelah sukses
           } else {
             alert("Gagal memperbarui notes: " + result.message);
           }

@@ -163,9 +163,14 @@
           const data = { judul, deskripsi, author };
 
           try {
+            const token = localStorage.getItem("accessToken");
+
             const response = await fetch(`${BASE_URL}/notes/tambah-notes`, {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`, // PENTING
+              },
               body: JSON.stringify(data),
             });
 
