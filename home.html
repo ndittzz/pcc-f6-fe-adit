@@ -107,7 +107,11 @@
         "https://backend-adit-377407893329.us-central1.run.app/api";
 
       document.addEventListener("DOMContentLoaded", function () {
-        fetch(`${BASE_URL}/notes/all`) // Ganti dengan API yang sesuai
+        fetch(`${BASE_URL}/notes/all`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
           .then((response) => response.json())
           .then((data) => {
             let container = document.getElementById("notes-container"); // Target ID yang baru
@@ -153,6 +157,9 @@
         if (confirm("Apakah Anda yakin ingin menghapus catatan ini?")) {
           fetch(`${BASE_URL}/notes/delete-notes/${id}`, {
             method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
           })
             .then((response) => {
               if (response.ok) {

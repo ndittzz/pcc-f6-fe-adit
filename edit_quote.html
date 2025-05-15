@@ -54,7 +54,7 @@
                   >
                 </li> -->
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html" style="color: black"
+                  <a class="nav-link" href="home.html" style="color: black"
                     >Notes</a
                   >
                 </li>
@@ -184,16 +184,21 @@
         };
 
         try {
-          const response = await fetch(`${BASE_URL}/notes/update-notes/${id}`, {
+          fetch(`${BASE_URL}/notes/update-notes/${id}`, {
             method: "PUT",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
             body: JSON.stringify(updatedData),
           });
+          // Redirect ke home.html setelah edit
+          window.location.href = "home.html";
 
           const result = await response.json();
           if (response.ok) {
             alert("Notes berhasil diperbarui!");
-            window.location.href = "index.html"; // Redirect ke halaman utama
+            window.location.href = "home.html"; // Redirect ke halaman utama
           } else {
             alert("Gagal memperbarui notes: " + result.message);
           }
