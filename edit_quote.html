@@ -137,7 +137,8 @@
       </div>
     </div>
     <script>
-      const BASE_URL = "https://backend-adit-377407893329.us-central1.run.app/";
+      const BASE_URL =
+        "https://backend-adit-377407893329.us-central1.run.app/api";
 
       // Fungsi untuk mendapatkan parameter `id` dari URL
       function getQueryParam(param) {
@@ -154,7 +155,7 @@
         }
 
         try {
-          const response = await fetch(`${BASE_URL}/notes/${id}`);
+          const response = await fetch(`${BASE_URL}/notes/all/${id}`);
           const quote = await response.json();
 
           document.getElementById("id").value = quote.id;
@@ -183,7 +184,7 @@
         };
 
         try {
-          const response = await fetch(`${BASE_URL}/update-notes/${id}`, {
+          const response = await fetch(`${BASE_URL}/notes/update-notes/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedData),

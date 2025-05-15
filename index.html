@@ -103,10 +103,11 @@
       </div>
     </div>
     <script>
-      const BASE_URL = "https://backend-adit-377407893329.us-central1.run.app/";
+      const BASE_URL =
+        "https://backend-adit-377407893329.us-central1.run.app/api";
 
       document.addEventListener("DOMContentLoaded", function () {
-        fetch(`${BASE_URL}/notes`) // Ganti dengan API yang sesuai
+        fetch(`${BASE_URL}/notes/all`) // Ganti dengan API yang sesuai
           .then((response) => response.json())
           .then((data) => {
             let container = document.getElementById("notes-container"); // Target ID yang baru
@@ -150,7 +151,7 @@
 
       function confirmDelete(id) {
         if (confirm("Apakah Anda yakin ingin menghapus catatan ini?")) {
-          fetch(`${BASE_URL}/delete-notes/${id}`, {
+          fetch(`${BASE_URL}/notes/delete-notes/${id}`, {
             method: "DELETE",
           })
             .then((response) => {

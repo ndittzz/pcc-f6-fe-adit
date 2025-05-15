@@ -10,10 +10,9 @@ handlers:
   # Serve file CSS
   - url: /css/(.*)
     static_files: css/\1
-    upload:
-      css/(.*)
+    upload: css/(.*)
 
-      # Serve file src
+  # Serve file src
   - url: /src/(.*)
     static_files: src/\1
     upload: src/(.*)
