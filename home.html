@@ -108,10 +108,11 @@
       //const token = localStorage.getItem("accessToken");
 
       document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("accessToken");
         fetch(`${BASE_URL}/notes/all`, {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
         })
           .then((response) => response.json())
