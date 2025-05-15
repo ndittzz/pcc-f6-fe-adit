@@ -105,14 +105,13 @@
     <script>
       const BASE_URL =
         "https://backend-adit-377407893329.us-central1.run.app/api";
-      const token = localStorage.getItem("accessToken");
+      //const token = localStorage.getItem("accessToken");
 
       document.addEventListener("DOMContentLoaded", function () {
         fetch(`${BASE_URL}/notes/all`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             "Content-Type": "application/json",
-            Accept: "application/json",
           },
         })
           .then((response) => response.json())
